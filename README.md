@@ -1,0 +1,1 @@
+# ricoconsign-pos-apache-php
