@@ -11,7 +11,7 @@ RUN apt-get install -y \
 
 RUN docker-php-ext-install \
     mbstring \
-    mysql \
+    mysqli \
     zip
 
 # Install GD library.
