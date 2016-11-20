@@ -7,9 +7,11 @@ MAINTAINER "Austin Maddox" <austin@maddoxbox.com>
 RUN apt-get update
 
 RUN apt-get install -y \
+    libmcrypt-dev \
     zlib1g-dev
 
 RUN docker-php-ext-install \
+    mcrypt \
     mbstring \
     mysqli \
     zip
