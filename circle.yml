@@ -11,7 +11,6 @@ dependencies:
   pre:
     - docker login -u $DOCKER_USER -p $DOCKER_PASS -e $DOCKER_EMAIL
     - rm /opt/circleci/php/$(phpenv global)/etc/conf.d/xdebug.ini
-    - aws --version; sudo pip install --upgrade awscli; aws --version
 
 test:
   pre:
