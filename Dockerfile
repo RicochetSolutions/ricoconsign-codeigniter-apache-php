@@ -8,12 +8,14 @@ RUN apt-get update
 
 RUN apt-get install -y \
     libmcrypt-dev \
+    libxml2-dev \
     zlib1g-dev
 
 RUN docker-php-ext-install \
     mcrypt \
     mbstring \
     mysqli \
+    soap \
     zip
 
 # Install GD library.
