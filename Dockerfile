@@ -30,11 +30,11 @@ COPY ./etc/apache2/conf-available/fqdn.conf /etc/apache2/conf-available/fqdn.con
 RUN a2enconf fqdn \
     && a2enmod rewrite
 
-# Define the virtual host.
-COPY ./etc/apache2/sites-available/virtual-host.conf /etc/apache2/sites-available/virtual-host.conf
+# Define the virtual hosts.
+COPY ./etc/apache2/sites-available/virtual-hosts.conf /etc/apache2/sites-available/virtual-hosts.conf
 RUN a2dissite 000-default \
     && rm /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/default-ssl.conf \
-    && a2ensite virtual-host
+    && a2ensite virtual-hosts
 
 # If needed, add a custom php.ini configuration.
 COPY ./usr/local/etc/php/php.ini /usr/local/etc/php/php.ini
