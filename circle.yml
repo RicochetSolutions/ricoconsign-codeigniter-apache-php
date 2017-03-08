@@ -2,11 +2,6 @@ machine:
   services:
     - docker
 
-checkout:
-  post:
-    - git clone https://github.com/RicochetSolutions/omnificent.git
-    - find ./omnificent -name "*.sh" -exec chmod u+x {} \;
-
 dependencies:
   pre:
     - docker login -u $DOCKER_USER -p $DOCKER_PASS -e $DOCKER_EMAIL
@@ -21,5 +16,3 @@ deployment:
     branch: [master]
     commands:
       - docker push ricochetsolutions/ricoconsign-pos-apache-php:latest
-
-      - ./omnificent/AWS/ECS/deploy.sh latest web-production-cluster us-west-2 ricoconsign-pos-codeigniter-production-service ./omnificent/AWS/ECS/task-definitions/ricoconsign-pos/ricoconsign-pos-codeigniter-production-task-definition.json ricoconsign-pos-codeigniter-production-task-definition ricoconsign-pos-codeigniter-production-task-definition
