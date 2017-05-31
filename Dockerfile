@@ -16,6 +16,7 @@ RUN docker-php-ext-install \
     mcrypt \
     mbstring \
     mysqli \
+    opcache \
     soap \
     zip
 
