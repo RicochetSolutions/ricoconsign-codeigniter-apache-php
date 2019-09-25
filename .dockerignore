@@ -1,6 +1,7 @@
 omnificent
 .git
 .idea
+.vscode
 
 .dockerignore
 .gitattributes
