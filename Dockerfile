@@ -1,8 +1,4 @@
-# ricochetsolutions/ricoconsign-pos-apache-php
-
 FROM php:5.5-apache
-
-MAINTAINER "Austin Maddox" <austin@maddoxbox.com>
 
 RUN apt-get update
 
